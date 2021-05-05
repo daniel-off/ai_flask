@@ -1,0 +1,41 @@
+
+{%extends 'Base.html'%}
+
+{% block content%}
+<article class="section">
+
+  <h2 class="section_name">Nahratie obrazku</h2>
+   <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="form">
+          {% csrf_token %}
+
+                <label class="upload-btn-wrapper" >
+                    <button class="btn">Vybrat obrazok</button>
+                    <input   type="file" name="image_file">
+                    <span class="file-cta">
+                  </span>
+                </label>
+                <br><br>
+              <label >
+                <input type="radio" name="image_type" value='public' checked>
+                Public
+              </label>
+              <label >
+                <input type="radio" name="image_type" value='private'>
+                Private
+              </label>
+
+          <br><br>
+          <div class="field">
+            <div class="control">
+              <input type="submit" value="Uploadnut" class="button" />
+            </div>
+          </div>
+        </form>
+         <br><br>
+        {% if image_url %}
+          <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
+        <img src="{{ image_url }}" alt="Trulli" width="500" height="333">
+        {% endif %}
+</article>
+
+{% endblock %}

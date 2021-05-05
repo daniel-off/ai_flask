@@ -1,0 +1,156 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 4000px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: rgb(40,42,54);
+  margin: 0;
+
+
+}
+
+.navbar {
+  top: 0;
+  position: fixed;
+  width:100%;
+  overflow: hidden;
+  background-color:rgb(68, 71, 90);
+  text-align: center;
+
+}
+
+
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+
+.navbar a {
+
+  float: left;
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+.navbar a.right {
+  float: right;
+}
+
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+.footer {
+  padding: 15px;
+  text-align: center;
+  background-color:rgba(0,0,0,0.8);
+  flex: auto;
+}
+
+
+.section{
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  border: 5px;
+  /*background-color:rgba(0,0,0,0.2);*/
+  max-height: 700px;
+  width:  auto;
+  height: auto;
+  border-radius: 5px;
+  background: rgb(68, 71, 90);
+
+
+}
+
+
+.section_name{
+
+  font-size: 40px;
+  background: #bd93f9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+
+.button {
+  position: relative;
+  border-radius: 25px;
+  background: #ff79c6;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button_more {
+  position: relative;
+  border-radius: 25px;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: #ff79c6;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+
+
+
+

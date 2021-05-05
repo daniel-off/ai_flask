@@ -1,0 +1,37 @@
+{%extends 'Base.html'%}
+
+
+{% block content%}
+
+    <article class="section" ><br>
+        <form method="POST" action="{% url 'join' %}">
+             {% csrf_token %}
+            <div>
+                <input type="text"placeholder="pouzivatelske meno" id="username"  name="username">
+            </div><br/>
+
+            <div>
+                <input type="text"placeholder="Meno" id="name1"  name="fname">
+            </div><br/>
+            <div>
+                <input type="text" placeholder="Priezvisko" id="lname1" name="lname">
+            </div>
+            <div><br/>
+                <input type="Email"  aria-describedby="emailHelp" id="email1" placeholder="Email" name="email">
+            </div>
+            <div><br/>
+                <input type="text" placeholder="Vek" id="age1" name="age">
+            </div>
+            <div><br/>
+            <input type="password" placeholder="Password" id="password1" name="passwd">
+            </div>
+
+        <br/><br/>
+
+      <button type="submit" class="button is-primary">Registrovat sa</button>
+        </form>
+    </article>
+    <br><br>
+
+
+{% endblock %}
