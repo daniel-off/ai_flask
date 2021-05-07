@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login
 from .models import Upload, UploadPrivate,Member
 from .forms import MemberForm
 
-from django_app.ai_backends import loadImage,ai_test
+import requests
 
 def index(request):
         return render(request,'index.html',{})
@@ -68,16 +68,19 @@ def image_upload(request):
             filename = fs.save(image_file.name, image_file)
             image_url = fs.url(filename)
 
+        ai_url='https://djangotest-313000.nw.r.appspot.com/predict/'+image_url
+        vysledok=requests.get(ai_url)
 
-        vysledok=ai_test(image_url)
-        if vysledok==1:
-            vysledok="Negativny"
-        elif vysledok==0:
-            vysledok="Pozitivny"
-        data = Member(username=request.user.username, link=image_url,pozitivita=vysledok)
+
+        odpoved='odpoved'
+        if '1' in vysledok.text:
+            odpoved="Negativny"
+        elif '0' in vysledok.text:
+            odpoved="Pozitivny"
+        data = Member(username=request.user.username, link=image_url,pozitivita=odpoved)
         data.save()
-        print(vysledok)
         return render(request, 'index.html', {
             'image_url': image_url
         })
+
     return render(request, 'index.html')
