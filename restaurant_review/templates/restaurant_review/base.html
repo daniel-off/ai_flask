@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <title>Django web app with PostgreSQL in Azure - {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+        <link rel="icon"href="{% static 'favicon.ico' %}">
+    {% endblock %}
+</head>
+<body>
+
+      <main class="container">    
+        {% block content %}{% endblock %}
+      </main>
+      <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>      
+</body>
+</html>
